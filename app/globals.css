@@ -89,7 +89,7 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
     font-feature-settings:
       'rlig' 1,
       'calt' 1;
@@ -101,7 +101,7 @@
   h4,
   h5,
   h6 {
-    @apply font-medium tracking-tight;
+    @apply font-heading font-medium tracking-tight;
   }
 
   .glass {
@@ -431,22 +431,22 @@
 
   /* Professional text styles */
   .heading-primary {
-    @apply text-4xl md:text-5xl lg:text-6xl font-normal text-globixs-primary leading-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl font-heading font-normal text-globixs-primary leading-tight;
   }
 
   .heading-secondary {
-    @apply text-3xl md:text-4xl lg:text-5xl font-normal text-globixs-primary leading-tight;
+    @apply text-3xl md:text-4xl lg:text-5xl font-heading font-normal text-globixs-primary leading-tight;
   }
 
   .heading-tertiary {
-    @apply text-2xl md:text-3xl lg:text-4xl font-normal text-globixs-primary leading-tight;
+    @apply text-2xl md:text-3xl lg:text-4xl font-heading font-normal text-globixs-primary leading-tight;
   }
 
   .text-lead {
-    @apply text-lg md:text-xl text-globixs-textLight leading-relaxed;
+    @apply text-lg md:text-xl font-body text-globixs-textLight leading-relaxed;
   }
 
   .text-body {
-    @apply text-base md:text-lg text-globixs-textLight leading-relaxed;
+    @apply text-base md:text-lg font-body text-globixs-textLight leading-relaxed;
   }
 }

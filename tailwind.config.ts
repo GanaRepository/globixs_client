@@ -19,6 +19,13 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'sans': ['var(--font-work-sans)', 'var(--font-space-grotesk)', 'system-ui', 'sans-serif'],
+        'serif': ['var(--font-playfair)', 'Georgia', 'serif'],
+        'heading': ['var(--font-playfair)', 'Georgia', 'serif'],
+        'body': ['var(--font-work-sans)', 'system-ui', 'sans-serif'],
+        'modern': ['var(--font-space-grotesk)', 'system-ui', 'sans-serif'],
+      },
       colors: {
         // Contact color palette
         contact: {
