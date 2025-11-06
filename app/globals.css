@@ -1,0 +1,452 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 33% 99%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 267 66% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 187 71% 56%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 267 66% 95%;
+    --accent-foreground: 267 66% 40%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 267 66% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 187 71% 56%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 267 66% 25%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-medium tracking-tight;
+  }
+
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+
+  .glass-dark {
+    @apply bg-gray-900/70 backdrop-blur-md border border-white/10 shadow-lg;
+  }
+}
+
+@layer components {
+  .input-field {
+    @apply w-full p-3 rounded-lg bg-white/80 backdrop-blur-sm text-gray-800 placeholder:text-gray-500 
+           border border-gray-200 transition-colors duration-300
+           focus:outline-none;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-globixs-primary to-globixs-secondary bg-clip-text text-transparent;
+  }
+
+  .gradient-button {
+    @apply bg-gradient-to-r from-globixs-primary to-globixs-secondary hover:from-globixs-primary/90 hover:to-globixs-secondary/90
+           text-white rounded-xl px-8 py-4 transition-all duration-300 font-semibold shadow-xl
+           hover:shadow-2xl hover:-translate-y-1 focus:outline-none focus:ring-4 
+           focus:ring-globixs-primary/30 focus:ring-offset-2;
+  }
+
+  .card-hover {
+    @apply hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 hover:scale-[1.02];
+  }
+
+  .feature-icon {
+    @apply w-14 h-14 rounded-2xl flex items-center justify-center bg-gradient-to-br from-globixs-secondary to-globixs-primary
+           text-white shadow-xl mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300;
+  }
+
+  .pattern-bg {
+    background-color: #f8fafc;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%231e3a8a' fill-opacity='0.03'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Professional blue grid pattern for modern backgrounds */
+  .blue-grid-pattern {
+    background: linear-gradient(
+      135deg,
+      #1e3a8a,
+      #0ea5e9
+    ); /* Professional Navy to Sky Blue Gradient */
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.07'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Professional blue dot pattern for modern backgrounds */
+  .blue-dot-pattern {
+    background: linear-gradient(
+      135deg,
+      #1e3a8a,
+      #0ea5e9
+    ); /* Professional Navy to Sky Blue Gradient */
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.08' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* === NEW GLOBIXS PATTERN ALTERNATIVES === */
+
+  /* 1. Subtle geometric pattern with globixs colors */
+  .globixs-geometric-pattern {
+    background-color: #eff6ff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%231e3a8a' fill-opacity='0.04'%3E%3Cpath d='M0 0h40v40H0z'/%3E%3Cpath d='M40 40h40v40H40z'/%3E%3C/g%3E%3Cg fill='%230ea5e9' fill-opacity='0.02'%3E%3Cpath d='M20 0h40v40H20z'/%3E%3Cpath d='M0 20h40v40H0z'/%3E%3Cpath d='M60 20h20v40H60z'/%3E%3Cpath d='M20 60h40v20H20z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* 2. Modern hexagon pattern */
+  .globixs-hexagon-pattern {
+    background-color: #f8fafc;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='48' viewBox='0 0 84 48'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%231e3a8a' fill-opacity='0.03'%3E%3Cpath d='M42 24l-7 12H7l-7-12 7-12h28l7 12zM77 12l-7 12H42l-7-12 7-12h28l7 12z'/%3E%3C/g%3E%3Cg fill='%230ea5e9' fill-opacity='0.02'%3E%3Cpath d='M77 36l-7 12H42l-7-12 7-12h28l7 12z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* 3. Elegant wave pattern */
+  .globixs-wave-pattern {
+    background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='20' viewBox='0 0 100 20'%3E%3Cg fill='%231e3a8a' fill-opacity='0.05'%3E%3Cpath d='M0 10c25-8 75 8 100 0v10H0z'/%3E%3C/g%3E%3Cg fill='%230ea5e9' fill-opacity='0.03'%3E%3Cpath d='M0 5c25-4 75 4 100 0v5H0z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* 4. Tech circuit pattern */
+  .globixs-circuit-pattern {
+    background-color: #f8fafc;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231e3a8a' fill-opacity='0.06'%3E%3Cpath d='M30 30c0-6.627 5.373-12 12-12s12 5.373 12 12-5.373 12-12 12-12-5.373-12-12zm12-8a8 8 0 1 0 0 16 8 8 0 0 0 0-16zM6 30c0-6.627 5.373-12 12-12s12 5.373 12 12-5.373 12-12 12S6 36.627 6 30zm12-8a8 8 0 1 0 0 16 8 8 0 0 0 0-16z'/%3E%3C/g%3E%3Cg fill='%230ea5e9' fill-opacity='0.04'%3E%3Cpath d='M30 6c0-6.627 5.373-12 12-12s12 5.373 12 12-5.373 12-12 12-12-5.373-12-12zm12-8a8 8 0 1 0 0 16 8 8 0 0 0 0-16zM6 6c0-6.627 5.373-12 12-12s12 5.373 12 12S24.627 18 18 18 6 12.627 6 6zm12-8a8 8 0 1 0 0 16 8 8 0 0 0 0-16z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* 5. Gradient mesh pattern */
+  .globixs-mesh-pattern {
+    background:
+      radial-gradient(circle at 25% 25%, #1e3a8a 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, #0ea5e9 0%, transparent 50%),
+      radial-gradient(circle at 75% 25%, #f97316 0%, transparent 50%),
+      radial-gradient(circle at 25% 75%, #1e3a8a 0%, transparent 50%),
+      linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+    background-size:
+      400px 400px,
+      400px 400px,
+      400px 400px,
+      400px 400px,
+      100% 100%;
+    opacity: 0.6;
+  }
+
+  /* 6. Modern dots pattern */
+  .globixs-dots-pattern {
+    background-color: #f8fafc;
+    background-image:
+      radial-gradient(circle, #1e3a8a 1px, transparent 1px),
+      radial-gradient(circle, #0ea5e9 0.5px, transparent 0.5px);
+    background-size:
+      40px 40px,
+      20px 20px;
+    background-position:
+      0 0,
+      10px 10px;
+    opacity: 0.4;
+  }
+
+  /* 7. Professional diamond pattern */
+  .globixs-diamond-pattern {
+    background-color: #f8fafc;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill='%231e3a8a' fill-opacity='0.05'%3E%3Cpath d='M20 20l10-10V0H20L10 10H0v10h10l10 10v10h10l10-10h10V20H30L20 20z'/%3E%3C/g%3E%3Cg fill='%230ea5e9' fill-opacity='0.03'%3E%3Cpath d='M20 0v10L10 0h10zm20 20v10L30 20h10z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* 8. Subtle grid with glow effect */
+  .globixs-grid-glow-pattern {
+    background-color: #f8fafc;
+    background-image:
+      linear-gradient(rgba(30, 58, 138, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(30, 58, 138, 0.02) 1px, transparent 1px),
+      linear-gradient(rgba(14, 165, 233, 0.01) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(14, 165, 233, 0.01) 1px, transparent 1px);
+    background-size:
+      60px 60px,
+      60px 60px,
+      20px 20px,
+      20px 20px;
+    background-position:
+      0 0,
+      0 0,
+      0 0,
+      0 0;
+  }
+
+  /* 9. Abstract organic pattern */
+  .globixs-organic-pattern {
+    background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%231e3a8a' stroke-width='1' opacity='0.05'%3E%3Cpath d='M5 5c20 20 20 20 50 0M5 55c20-20 20-20 50 0'/%3E%3Cpath d='M55 5c-20 20-20 20 0 50M5 5c20 20 20 20 0 50'/%3E%3C/g%3E%3Cg fill='%230ea5e9' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3Ccircle cx='10' cy='10' r='2'/%3E%3Ccircle cx='50' cy='50' r='2'/%3E%3Ccircle cx='10' cy='50' r='2'/%3E%3Ccircle cx='50' cy='10' r='2'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* 10. Modern tech lines pattern */
+  .globixs-tech-lines-pattern {
+    background-color: #f8fafc;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg stroke='%231e3a8a' stroke-width='1' fill='none' opacity='0.04'%3E%3Cpath d='M0 25h100M0 75h100'/%3E%3Cpath d='M25 0v100M75 0v100'/%3E%3C/g%3E%3Cg stroke='%230ea5e9' stroke-width='0.5' fill='none' opacity='0.03'%3E%3Cpath d='M0 50h100M50 0v100'/%3E%3Cpath d='M0 12.5h100M0 37.5h100M0 62.5h100M0 87.5h100'/%3E%3Cpath d='M12.5 0v100M37.5 0v100M62.5 0v100M87.5 0v100'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .blog-content h2 {
+    font-size: 1.875rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1.25rem;
+    color: #333;
+  }
+
+  .blog-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1.75rem;
+    margin-bottom: 1rem;
+    color: #444;
+  }
+
+  .blog-content p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+
+  .blog-content ul,
+  .blog-content ol {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .blog-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+
+  .blog-content blockquote {
+    border-left: 4px solid #6366f1;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: #4a5568;
+    font-style: italic;
+  }
+
+  /* Additional spacing between major sections */
+  .blog-content h2 + p,
+  .blog-content h3 + p {
+    margin-top: 0.75rem;
+  }
+
+  /* Add some spacing after lists */
+  .blog-content ul + h2,
+  .blog-content ul + h3,
+  .blog-content ol + h2,
+  .blog-content ol + h3 {
+    margin-top: 1.5rem;
+  }
+}
+
+/* Old color utilities - keeping for backward compatibility but deprecated */
+@layer utilities {
+  .from-globixs-primary {
+    --tw-gradient-from: #1e3a8a var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(30 58 138 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+
+  .to-globixs-secondary {
+    --tw-gradient-to: #0ea5e9 var(--tw-gradient-to-position);
+  }
+
+  /* Globixs primary color utilities */
+  .border-globixs-primary {
+    border-color: #1e3a8a;
+  }
+
+  .hover\:border-globixs-primary:hover {
+    border-color: #1e3a8a;
+  }
+
+  .ring-globixs-primary\/30 {
+    --tw-ring-color: rgba(30, 58, 138, 0.3);
+  }
+
+  .focus\:ring-globixs-primary\/30:focus {
+    --tw-ring-color: rgba(30, 58, 138, 0.3);
+  }
+
+  .focus\:border-globixs-primary:focus {
+    border-color: #1e3a8a;
+  }
+
+  .shadow-globixs-primary\/20 {
+    --tw-shadow-color: rgba(30, 58, 138, 0.2);
+    box-shadow:
+      var(--tw-ring-offset-shadow, 0 0 transparent),
+      var(--tw-ring-shadow, 0 0 transparent), var(--tw-shadow);
+  }
+
+  .hover\:shadow-globixs-primary\/20:hover {
+    --tw-shadow-color: rgba(30, 58, 138, 0.2);
+    box-shadow:
+      var(--tw-ring-offset-shadow, 0 0 transparent),
+      var(--tw-ring-shadow, 0 0 transparent), var(--tw-shadow);
+  }
+
+  .focus\:ring-globixs-primary\/50:focus {
+    --tw-ring-color: rgba(30, 58, 138, 0.5);
+  }
+
+  .hover\:shadow-globixs-primary\/10:hover {
+    --tw-shadow-color: rgba(30, 58, 138, 0.1);
+    box-shadow:
+      var(--tw-ring-offset-shadow, 0 0 transparent),
+      var(--tw-ring-shadow, 0 0 transparent), var(--tw-shadow);
+  }
+
+  /* Globixs secondary color utilities */
+  .border-globixs-secondary {
+    border-color: #0ea5e9;
+  }
+
+  .hover\:border-globixs-secondary:hover {
+    border-color: #0ea5e9;
+  }
+
+  /* Section utilities for professional spacing */
+  .section-padding {
+    @apply py-16 px-4 md:py-20 md:px-6 lg:py-24 lg:px-8;
+  }
+
+  .section-margin {
+    @apply my-16 md:my-20 lg:my-24;
+  }
+
+  .content-spacing {
+    @apply space-y-12 md:space-y-16;
+  }
+
+  .card-padding {
+    @apply p-6 md:p-8 lg:p-10;
+  }
+
+  /* Professional card styles */
+  .professional-card {
+    @apply bg-globixs-surface rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 
+           border border-globixs-border hover:border-globixs-borderHover;
+  }
+
+  .professional-button {
+    @apply bg-globixs-primary hover:bg-globixs-primary/90 text-globixs-textOnDark
+           px-8 py-4 rounded-xl font-semibold transition-all duration-300
+           shadow-lg hover:shadow-xl hover:-translate-y-1
+           focus:outline-none focus:ring-4 focus:ring-globixs-primary/30;
+  }
+
+  .professional-button-secondary {
+    @apply bg-globixs-secondary hover:bg-globixs-secondary/90 text-globixs-textOnDark
+           px-8 py-4 rounded-xl font-semibold transition-all duration-300
+           shadow-lg hover:shadow-xl hover:-translate-y-1
+           focus:outline-none focus:ring-4 focus:ring-globixs-secondary/30;
+  }
+
+  .professional-button-outline {
+    @apply border-2 border-globixs-primary text-globixs-primary hover:bg-globixs-primary hover:text-globixs-textOnDark
+           px-8 py-4 rounded-xl font-semibold transition-all duration-300
+           shadow-lg hover:shadow-xl hover:-translate-y-1
+           focus:outline-none focus:ring-4 focus:ring-globixs-primary/30;
+  }
+
+  /* Professional text styles */
+  .heading-primary {
+    @apply text-4xl md:text-5xl lg:text-6xl font-normal text-globixs-primary leading-tight;
+  }
+
+  .heading-secondary {
+    @apply text-3xl md:text-4xl lg:text-5xl font-normal text-globixs-primary leading-tight;
+  }
+
+  .heading-tertiary {
+    @apply text-2xl md:text-3xl lg:text-4xl font-normal text-globixs-primary leading-tight;
+  }
+
+  .text-lead {
+    @apply text-lg md:text-xl text-globixs-textLight leading-relaxed;
+  }
+
+  .text-body {
+    @apply text-base md:text-lg text-globixs-textLight leading-relaxed;
+  }
+}

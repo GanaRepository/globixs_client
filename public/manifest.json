@@ -1,0 +1,15 @@
+{
+  "name": "A3 Tech Solutions",
+  "short_name": "A3 Tech",
+  "icons": [
+    {
+      "src": "/favicon2.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
+}
